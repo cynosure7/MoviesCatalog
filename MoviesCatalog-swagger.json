@@ -1,0 +1,313 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "API - CRUD",
+    "description": "TODO: Add Description",
+    "license": {
+      "name": "MIT",
+      "url": "http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT"
+    }
+  },
+  "host": "localhost:56942",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "paths": {
+    "/movies": {
+      "get": {
+        "description": "",
+        "summary": "/movies",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "MoviesGet",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "GET",
+              "uri": "/movies"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "http://localhost:56942/movies",
+            "x-testDescription": ""
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "",
+        "summary": "/movies",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "MoviesPost",
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Http:~1~1localhost:56942~1moviesrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "",
+			"default": "application/json"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "POST",
+              "uri": "/movies",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n    \"id\": 4,\n    \"title\": \"Thunderball\",\n    \"releaseYear\": 1965,\n    \"summary\": \"James Bond heads to The Bahamas to recover two nuclear warheads stolen by SPECTRE agent Emilio Largo in an international extortion scheme.\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "http://localhost:56942/movies1",
+            "x-testDescription": ""
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/movies/4": {
+      "put": {
+        "description": "",
+        "summary": "/movies/4",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Movies4Put",
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Http:~1~1localhost:56942~1moviesrequest"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": "",
+			"default": "application/json"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "PUT",
+              "uri": "/movies/4",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\n    \"id\": 4,\n    \"title\": \"\",\n    \"releaseYear\": 1965,\n    \"summary\": \"James Bond heads to The Bahamas to recover two nuclear warheads stolen by SPECTRE agent Emilio Largo in an international extortion scheme.\"\n}"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "http://localhost:56942/movies/4",
+            "x-testDescription": ""
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "delete": {
+        "description": "",
+        "summary": "/movies/4",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Movies4Delete",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        },
+        "security": [],
+        "x-unitTests": [
+          {
+            "request": {
+              "method": "DELETE",
+              "uri": "/movies/4"
+            },
+            "expectedResponse": {
+              "x-allowExtraHeaders": true,
+              "x-bodyMatchMode": "NONE",
+              "x-arrayOrderedMatching": false,
+              "x-arrayCheckCount": false,
+              "x-matchResponseSchema": true,
+              "headers": {}
+            },
+            "x-testShouldPass": true,
+            "x-testEnabled": true,
+            "x-testName": "http://localhost:56942/movies/41",
+            "x-testDescription": ""
+          }
+        ],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Http://localhost:56942/moviesrequest": {
+      "title": "http://localhost:56942/moviesRequest",
+      "example": {
+        "id": 4,
+        "title": "Thunderball",
+        "releaseYear": 1965,
+        "summary": "James Bond heads to The Bahamas to recover two nuclear warheads stolen by SPECTRE agent Emilio Largo in an international extortion scheme."
+      },
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "",
+          "example": 4,
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "description": "",
+          "example": "Thunderball",
+          "type": "string"
+        },
+        "releaseYear": {
+          "description": "",
+          "example": 1965,
+          "type": "integer",
+          "format": "int32"
+        },
+        "summary": {
+          "description": "",
+          "example": "James Bond heads to The Bahamas to recover two nuclear warheads stolen by SPECTRE agent Emilio Largo in an international extortion scheme.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "releaseYear",
+        "summary"
+      ]
+    },
+    "Http://localhost:56942/movies/4request2": {
+      "title": "http://localhost:56942/movies/4Request2",
+      "example": {
+        "op": "add",
+        "path": "/title",
+        "value": "Thunderball-Patched"
+      },
+      "type": "object",
+      "properties": {
+        "op": {
+          "description": "",
+          "example": "add",
+          "type": "string"
+        },
+        "path": {
+          "description": "",
+          "example": "/title",
+          "type": "string"
+        },
+        "value": {
+          "description": "",
+          "example": "Thunderball-Patched",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "path",
+        "value"
+      ]
+    }
+  }
+}

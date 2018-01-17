@@ -76,30 +76,6 @@ namespace Fiver.Api.Crud.Controllers
             return NoContent();
         }
 
-        [HttpPatch("{id}")]
-        public IActionResult UpdatePatch(
-            int id, [FromBody]JsonPatchDocument<MovieInputModel> patch)
-        {
-            if (patch == null)
-                return BadRequest();
-
-            var model = service.GetMovie(id);
-            if (model == null)
-                return NotFound();
-
-            var inputModel = ToInputModel(model);
-            patch.ApplyTo(inputModel);
-
-            TryValidateModel(inputModel);
-            if (!ModelState.IsValid)
-                return new UnprocessableObjectResult(ModelState);
-
-            model = ToDomainModel(inputModel);
-            service.UpdateMovie(model);
-
-            return NoContent();
-        }
-
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
